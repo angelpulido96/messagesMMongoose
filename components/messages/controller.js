@@ -34,7 +34,7 @@ router.post('/', async (req, res) => {
       const errorValues = Object.values(error.errors)
       errorMessage = errorValues.length > 0 ? errorValues[0].message : 'Validation error'
     }
-    response.error(req, res, errorMessage, 500, error.message)
+    response.error(req, res, errorMessage, 401, error.message)
   }
 })
 
